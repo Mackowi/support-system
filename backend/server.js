@@ -4,6 +4,7 @@ const colors = require('colors')
 const PORT = process.env.PORT || 5000
 const { errorHandler } = require('./middleware/errorMiddleware')
 const userRoutes = require('./routes/userRoutes')
+const ticketRoutes = require('./routes/ticketRoutes')
 const connectDB = require('./config/db')
 
 // connect to db
@@ -20,6 +21,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api/users', userRoutes)
+app.use('/api/tickets', ticketRoutes)
 
 app.use(errorHandler)
 
