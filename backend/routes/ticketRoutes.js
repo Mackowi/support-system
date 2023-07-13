@@ -9,6 +9,10 @@ const {
 } = require('../controllers/ticketController.js')
 const { protect } = require('../middleware/authMiddleware')
 
+// reroute into noteRouter to get tickets/ticketId
+const noteRouter = require('./noteRoutes.js')
+router.use('/:ticketId/notes', noteRouter)
+
 router.route('/').get(protect, getTickets).post(protect, createTicket)
 router
   .route('/:id')
