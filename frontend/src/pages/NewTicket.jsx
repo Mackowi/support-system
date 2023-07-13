@@ -50,7 +50,13 @@ function NewTicket() {
       <section className='form'>
         <div className='form-group'>
           <label htmlFor='name'>Customer Name</label>
-          <input type='text' className='form-control' value={name} disabled />
+          <input
+            id='name'
+            type='text'
+            className='form-control'
+            value={name}
+            disabled
+          />
         </div>
         <div className='form-group'>
           <label htmlFor='email'>Customer Email</label>
